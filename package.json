@@ -1,0 +1,46 @@
+{
+  "name": "dsh-model-endpoint-link",
+  "description": "DSH browser plugin that broadcasts the current session's effective model selection as a window CustomEvent (dsh:model-selected) the moment it changes. Primary consumer: the dsh-whale-widget balance widget switches its accounting endpoint. Pure event bridge, no core changes.",
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "model-selection",
+    "event",
+    "ui"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings-general"
+      ],
+      "platform": "web"
+    }
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imcaibaicai/dsh-model-endpoint-link.git"
+  }
+}
